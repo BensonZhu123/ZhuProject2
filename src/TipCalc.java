@@ -25,10 +25,17 @@ public class TipCalc {
         double totalTip = ((bill*100)/(100.0/tipPercent))/100;
         String formatTotalTip = formatter.format(totalTip);
         System.out.println("Total Tip: " + formatTotalTip);
-        System.out.println("Total Bill With Tip: " + (bill+totalTip));
-        double personBefore = (bill/totalPeople);
-        System.out.println("Per Person Cost Before Tip: " + personBefore);
+        double totalBill = bill+totalTip;
+        String formatTotalBill = formatter.format(totalBill);
+        System.out.println("Total Bill With Tip: " + (formatTotalBill));
+        double personBefore = bill/totalPeople;
+        String formatPersonBefore = formatter.format(personBefore);
+        System.out.println("Per Person Cost Before Tip: " + formatPersonBefore);
         double tipPerson = totalTip/totalPeople;
-        System.out.println("Tip Per Person: " + tipPerson);
+        String formatTipPerson = formatter.format(tipPerson);
+        System.out.println("Tip Per Person: " + formatTipPerson);
+        double totalCostPerson = (tipPerson + personBefore);
+        String formatTotalCostPerson = formatter.format(totalCostPerson);
+        System.out.println("Total Cost Per Person: " + formatTotalCostPerson);
     }
 }
